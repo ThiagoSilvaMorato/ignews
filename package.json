@@ -9,12 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prismicio/client": "^5.1.0",
+    "@stripe/stripe-js": "^1.18.0",
+    "axios": "^0.21.4",
+    "faunadb": "^4.4.1",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-icons": "^4.2.0",
+    "sass": "^1.42.1",
+    "stripe": "^8.176.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.10.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/next-auth": "^3.15.0",
+    "@types/node": "^16.9.6",
+    "@types/prismic-dom": "^2.1.1",
+    "@types/react": "^17.0.24",
+    "babel-jest": "^27.3.1",
     "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
+    "jest-dom": "^4.0.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.3"
   }
 }
