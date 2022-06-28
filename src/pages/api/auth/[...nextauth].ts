@@ -11,8 +11,15 @@ export default NextAuth({
     Providers({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      authorization: {
+        params: {
+          scope: "read:user",
+          redirect_uri: process.env.NEXTAUTH_URL,
+        },
+      },
     }) as Provider,
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async signIn({ user, account, profile }) {
       const { email } = user;
