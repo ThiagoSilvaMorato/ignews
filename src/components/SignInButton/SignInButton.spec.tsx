@@ -9,7 +9,7 @@ describe("SignInButton component", () => {
   it("should renders correctly when user is not authenticated", () => {
     const useSessionMocked = jest.mocked(useSession);
 
-    useSessionMocked.mockReturnValueOnce([null, false]);
+    useSessionMocked.mockReturnValueOnce({ data: null, status: "loading" } as any);
 
     render(<SignInButton />);
 
@@ -19,20 +19,17 @@ describe("SignInButton component", () => {
   it("should renders correctly when user is authenticated", () => {
     const useSessionMocked = jest.mocked(useSession);
 
-    useSessionMocked.mockReturnValueOnce([
-      {
+    useSessionMocked.mockReturnValueOnce({
+      data: {
         user: {
           name: "John Doe",
           email: "john.doe@example.com",
         },
-        expires: "fake-exp",
+        expires: "fake-expires",
       },
-      false,
-    ]);
+    } as any);
 
-    const { debug } = render(<SignInButton />);
-
-    debug();
+    render(<SignInButton />);
 
     expect(screen.getByText("John Doe")).toBeInTheDocument();
   });
